@@ -1,8 +1,9 @@
-def grab(h, n):
+def grap(h, n):
+    # hey-stack h, needle n
     word = ''
     indexes = []
     if (len(h) < len(n)):
-        error = "needle is bigger than the heystack :("
+        error = "needle is bigger than the hey-stack :("
         return error
 
     if h == '':
@@ -24,8 +25,8 @@ def grab(h, n):
     return indexes
 
 
-x = grab('aaabcdddejfdjbabcuihd',
-         '')
+x = grap('aaabcdddejfdjbabcuihd',
+         'fd')
 
 print(x)
 # time = O(n*m)

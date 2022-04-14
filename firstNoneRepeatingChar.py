@@ -1,13 +1,13 @@
 def first_non_repeating_character(S):
-    occurance = {}
+    occurrence = {}
     for c in S:
-        if c in occurance:
-            occurance[c] += 1
+        if c in occurrence:
+            occurrence[c] += 1
         else:
-            occurance[c] = 1
+            occurrence[c] = 1
 
-    for c in occurance:
-        if occurance[c] == 1:
+    for c in occurrence:
+        if occurrence[c] == 1:
             return c
 
 

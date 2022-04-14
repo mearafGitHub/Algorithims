@@ -1,12 +1,4 @@
-grid = [
-    [1, 0, 0, 0, 1],
-    [1, 0, 1, 0, 0],
-    [0, 1, 0, 0, 1]
-]
-
-
-# store position information when found
-# of each robots in list in tuples
+# store position information when found of each robot in list in tuples
 def store_position_inf(grid):
     valid_move = 1
     all_positions = []
@@ -36,6 +28,10 @@ def validate_moves(all_positions):
             print("Invalid")
 
 
-# return "invalied move from: ",pos[p]," ==> ",pos[p-1]
-
+grid = [
+    [1, 0, 0, 0, 1],
+    [1, 0, 1, 0, 0],
+    [0, 1, 0, 0, 1]
+]
+# return "invalid move from: ",pos[p]," ==> ",pos[p-1]
 store_position_inf(grid)

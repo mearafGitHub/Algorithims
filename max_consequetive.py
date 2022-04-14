@@ -1,23 +1,33 @@
-occurance = []
-max = {}
-pointer = 0
-
-def max_consequetive(A):
-    sequence = []
-    for i in range(0, len(A)-1):
-        if abs(A[i]-A[i+1]) == 1:
-            sequence.append(A[i])
-    max[i] = sequence
-    occurance.append(sequence)
-    return max
-    # print(pointer
-
-print(max_consequetive([7,7,5,10,11,12,13,14,20,30,40,1,2,3]))
+import heapq
+from collections import Counter
 
 
-#  someone else's code
+def max_consequetive_repeated(A):
+    d = Counter(A)
+    hp = []
 
-def max_consequetive(A):
+    most_duplicate = 0
+    for r in list(d.values()):
+        heapq.heappush(hp, -r)
+    q = heapq.heappop(hp)
+    for k, v in d.items():
+        if v == -q:
+            most_duplicate = k
+
+    # occurrence = []
+    # sequence = []
+    # for i in range(0, len(A)-1):
+    #     if abs(A[i]-A[i+1]) == 0:
+    #         sequence.append(A[i])
+    #     occurrence.append(sequence)
+    #     sequence = []
+
+    return most_duplicate
+
+
+# other solution
+
+def max_consequetive_(A):
     visited = [False] * len(A)
     length = 0
     max_len = 0
@@ -29,16 +39,17 @@ def max_consequetive(A):
             # then go forward
             forward = A[i] + 1
             while forward in A_set:
-                visited[foraward] = True
-                lenght += 1
+                visited[forward] = True
+                length += 1
                 forward += 1
 
             backward = A[i] - 1
             while forward in A_set:
-                visited[foraward] = True
-                lenght -= 1
+                visited[forward] = True
+                length -= 1
                 backward -= 1
-
             max_len = max(max_len, length)
-            lenght = 0
+
         return max_len
+
+print(max_consequetive_repeated([7, 7, 20, 12, 20, 12, 12, 14, 20, 20, 2]))

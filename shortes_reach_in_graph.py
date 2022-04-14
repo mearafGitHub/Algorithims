@@ -22,6 +22,7 @@ def find_all_dists(g, s):
         arr.append(r)
     return ss
 
+
 t = int(input())
 for i in range(t):
     n, m = [int(value) for value in input().split()]

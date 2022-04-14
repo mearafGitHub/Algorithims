@@ -36,6 +36,28 @@ class BinarySearchTree:
                     break
 
 
+"""
+Node is defined as
+self.left (the left child of the node)
+self.right (the right child of the node)
+self.info (the value of the node)
+"""
+
+
+def levelOrder(root):
+    # Write your code here
+    if root == None:
+        return
+    traker = [root]
+    while (len(traker) > 0):
+        item = traker.pop(0)
+        print(item.info, end=" ")
+        if item.left != None:
+            traker.append(item.left)
+        if item.right != None:
+            traker.append(item.right)
+
+
 tree = BinarySearchTree()
 t = int(input())
 
@@ -43,3 +65,5 @@ arr = list(map(int, input().split()))
 
 for i in range(t):
     tree.create(arr[i])
+
+levelOrder(tree.root)

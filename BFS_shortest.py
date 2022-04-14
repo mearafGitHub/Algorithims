@@ -2,7 +2,6 @@ import sys
 a = []
 g = {}
 
-
 def distance(s, n):
     # returns graph with updated distance
     for node in range(1, n+1):
@@ -27,13 +26,8 @@ def distance(s, n):
                                 g[node][0] += g[g[node][1]][0]
                             elif g[node][1] != v[0]:
                                 g[node][1] = v[0]
-
     # print(g)
     return g
-
-# new_g = distance({1: [-1, 0], 2: [-1, 0], 3: [-1, 0], 4:[-1, 0]},
-#          [[1, 2], [2, 1], [2, 3], [1, 3]],
-#          1, 4)
 
 
 def main():
@@ -75,3 +69,6 @@ if __name__ == "__main__":
     main()
 
 
+# new_g = distance({1: [-1, 0], 2: [-1, 0], 3: [-1, 0], 4:[-1, 0]},
+#          [[1, 2], [2, 1], [2, 3], [1, 3]],
+#          1, 4)

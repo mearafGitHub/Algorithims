@@ -8,7 +8,7 @@ def first_dupplicate(S):
 
     for c in occurance:
         if occurance[c] > 1:
-            return c
+            return (c, occurance[c] )
 
 
 print(first_dupplicate('asdncdddddakaaalajjjdhusasbcdef'))

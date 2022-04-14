@@ -4,10 +4,8 @@ class Vertex:
         self.distance = float('inf')
 
 
-w = {}
-
-
 def weight(i, j):
+    w = {} # given globally in this case
     if (i, j) in w:
         return w[(i, j)]
 
